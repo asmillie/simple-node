@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - 12
+
+services:
+  - docker
+
+# Pre-testing Installs
+install:
+  - echo: "No installs required"
+
+# Scripts to be run such as test
+before_script:
+  - echo: "No tests"
+
+script:
+  - docker --version # Version printout for logging
+  - docker build -t simple-node .
+  - docker tag simple-node elsrickle/simple-node:latest
+
+# Tasks to perform after successful script execution
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push elsrickle/simple-node
