@@ -6,12 +6,12 @@ services:
   - docker
 
 # Pre-testing Installs
-install:
-  - echo: "No installs required"
+# install:
+#  - echo: "No installs required"
 
 # Scripts to be run such as test
-before_script:
-  - echo: "No tests"
+# before_script:
+#  - echo: "No tests"
 
 script:
   - docker --version # Version printout for logging
