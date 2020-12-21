@@ -1,17 +1,17 @@
 language: node_js
 node_js:
-  - 12
+  - 12.18.3
 
 services:
   - docker
 
 # Pre-testing Installs
 # install:
-#  - echo: "No installs required"
+#  - echo "No installs required"
 
 # Scripts to be run such as test
 # before_script:
-#  - echo: "No tests"
+#  - echo "No tests"
 
 script:
   - docker --version # Version printout for logging
